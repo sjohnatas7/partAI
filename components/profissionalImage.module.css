@@ -1,0 +1,20 @@
+.history {
+    overflow: hidden;
+  }
+  
+  .historyContent {
+    transform: translateY(100%);
+    animation: slideIn 0.5s forwards;
+    background-color: #E5E9F6;
+    color: #00718E
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
