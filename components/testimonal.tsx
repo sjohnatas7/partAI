@@ -18,7 +18,7 @@ interface TestimonialProps {
 const TestimonialCard = ({ testimonial }: TestimonialProps) => {
   return (
     <div className="flex flex-col overflow-hidden shadow-xl">
-      <div className="flex flex-1 flex-col justify-between bg-white p-6 lg:px-7 lg:py-8">
+      <div className="flex flex-1 flex-col justify-between bg-background p-6 lg:px-7 lg:py-8">
         <div className="flex-1">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
@@ -27,14 +27,14 @@ const TestimonialCard = ({ testimonial }: TestimonialProps) => {
                 className="size-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
-                fill="currentColor"
+                fill="white"
               >
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             ))}
           </div>
           <blockquote className="mt-8 flex-1">
-            <p className="font-pj text-lg leading-relaxed text-gray-900">
+            <p className="font-pj text-lg leading-relaxed text-primary opacity-80">
               {testimonial.text}
             </p>
           </blockquote>
@@ -48,7 +48,7 @@ const TestimonialCard = ({ testimonial }: TestimonialProps) => {
             alt={testimonial.name}
           />
           <div className="ml-4">
-            <p className="font-pj text-base font-bold text-gray-900">
+            <p className="font-pj text-base font-bold text-primary">
               {testimonial.name}
             </p>
             <p className="font-pj mt-0.5 text-sm text-gray-600">
@@ -99,18 +99,18 @@ const TestimonialSection = () => {
     setIsVisible(true)
   }
   return (
-    <section className="bg-gray-50 py-12 sm:py-16 lg:py-20" id="depoimentos">
+    <section className="bg-background py-12 sm:py-16 lg:py-20" id="depoimentos">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <div className="text-center">
-            <h2 className={`${isVisible ? "animate-slide-in-right" : "invisible"} font-pj mt-4 text-3xl font-bold text-primary sm:text-4xl xl:text-5xl `} ref={ref}>
+            <h2 className={`${isVisible ? "animate-slide-in-right" : "invisible"} font-pj mt-4 text-4xl font-bold text-primary sm:text-4xl xl:text-5xl `} ref={ref}>
               Confie em nossos clientes satisfeitos!
             </h2>
           </div>
           <div className="mt-8 text-center md:order-3 md:mt-16">
             <a
               href="#"
-              className="font-pj border-b-2 border-gray-900 pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 hover:border-gray-600"
+              className="font-pj border-b-2 border-primary pb-2 text-base font-bold leading-7 text-primary transition-all duration-200 hover:border-gray-600"
             >
               Faça sua cotação agora
             </a>

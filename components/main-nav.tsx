@@ -66,6 +66,7 @@ export function MainNav({ items, logo }: MainNavProps) {
           alt="logo"
           src={logo || ""}
           className="size-full"
+          priority={true}
         />
       </Link>
 
@@ -80,10 +81,11 @@ export function MainNav({ items, logo }: MainNavProps) {
                     onClick={() => scrollToSection(item.href)}
                     className={cn(
                       "flex items-center text-sm font-medium",
-                      currentSection === item.href
+                      currentSection === item.href 
                         ? "text-primary underline underline-offset-4"
                         : "text-primary",
-                      item.disabled && "cursor-not-allowed opacity-80"
+                      item.disabled && "cursor-not-allowed opacity-80",
+                      item.cta && "rounded bg-primary px-4 py-2 text-background"
                     )}
                   >
                     {item.title}
@@ -117,7 +119,8 @@ export function MainNav({ items, logo }: MainNavProps) {
                           "text-sm font-medium",
                           currentSection === item.href
                             ? "text-primary underline underline-offset-4"
-                            : "text-primary"
+                            : "text-primary",
+                          item.cta && "rounded bg-primary text-background"
                         )}
                       >
                         {item.title}

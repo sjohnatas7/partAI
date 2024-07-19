@@ -14,7 +14,7 @@ export default function Footer() {
     section?.scrollIntoView({ behavior: "smooth" })
   }
   return (
-    <footer className="bg-primary py-8 text-white">
+    <footer className="bg-background py-8 text-white">
       <div className="container mx-auto flex flex-col justify-between space-y-4 md:flex-row md:space-x-8 md:space-y-0">
         <div className="flex flex-col items-center">
           <Image
@@ -23,9 +23,6 @@ export default function Footer() {
             height={300}
             alt="Logo"
             className="rounded-lg"
-            style={{
-              filter: "brightness(0) invert(1)"
-            }}
           />
         </div>
         <div className="flex flex-col items-center">

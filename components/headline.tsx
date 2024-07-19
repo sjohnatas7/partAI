@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function Headline() {
   const [isAnimated, setIsAnimated] = useState(false)
@@ -13,20 +14,23 @@ export default function Headline() {
     triggerOnce: true,
     threshold: 0.2,
   })
-  if (inView && !isAnimated) {
-    setIsAnimated(true)
-  }
+
+  useEffect(() => {
+    if (inView && !isAnimated) {
+      setIsAnimated(true)
+    }
+  }, [inView, isAnimated])
+
   return (
     <section
-      className="flex min-h-screen items-center bg-center md:bg-left-top"
-      style={{
-        backgroundImage: 'url("/imagens/heroImage.jpg")',
-        backgroundSize: "cover",
-      }}
+      className="flex  items-center bg-center md:bg-left-top"
       id="titulo"
     >
-      <div className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+      <div className="container grid items-center gap-6 pb-8 pt-6 md:grid-cols-2 md:py-10">
         <div className="mb-0 flex max-w-[600px] flex-col items-start gap-2">
+          <h2 className="mb-3 text-xl font-semibold text-white">
+            O futuro está aqui...
+          </h2>
           <h1
             ref={ref}
             className={`hero text-5xl font-extrabold  ${
@@ -34,31 +38,34 @@ export default function Headline() {
             }`}
           >
             <span className="textline">
-              Obtenha o seu seguro perfeito com uma cotação personalizada
+              Descubra o poder da Automação com IA para o seu negócio
             </span>
             <br className="hidden sm:inline" />
           </h1>
-          <h2 className="mb-3 text-xl font-semibold text-white">
-            Encontre a melhor opção para você e sua família com nossa ferramenta
-            de cotação fácil e rápida
-          </h2>
           <p className="mb-3 text-lg text-white">
-            Você merece ter a certeza de que você e seus entes queridos estão
-            protegidos. Com nossa ferramenta de cotação, você pode comparar
-            opções de seguro e encontrar a melhor cobertura para o seu estilo de
-            vida.
+            Obtenha respostas rápidas e personalizadas com nosso chatbot
           </p>
+          <div className="flex gap-4">
+            <Link
+              href={siteConfig.links.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants()}
+            >
+              Saiba como funciona
+            </Link>
+          </div>
         </div>
-        <div className="flex gap-4">
-          <Link
-            href={siteConfig.links.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className={buttonVariants()}
-          >
-            Obtenha sua cotação agora
-          </Link>
-      </div>
+        <div className="image-before flex items-center  justify-center">
+          <Image
+            src="/imagens/c.png" // Replace with the actual path to your image
+            width={500}
+            height={500}
+            alt="Description of the image"
+            className=""
+            style={{transform: "scaleX(1)"}}
+          />
+        </div>
       </div>
     </section>
   )

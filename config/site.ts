@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "ReconecTO",
+  name: "PartAI",
   description:
     "Somos uma clínica especializada no tratamento em Neuromodulação através da Estimulação Transcraniana por Corrente Contínua - tDCS, que tem por objetivo promover maior qualidade de vida e potencializar o desempenho dos pacientes em suas atividades.",
   mainNav: [
@@ -18,16 +18,17 @@ export const siteConfig = {
       href: "vantagens",
     },
     {
-      title: "Cotação",
-      href: "cotacao",
-    },
-    {
       title: "Depoimentos",
       href: "depoimentos",
     },
     {
-      title: "FAQ",
-      href: "faq",
+      title: "Ferramentas",
+      href: "ferramentas",
+    },
+    {
+      title: "Fale Conosco",
+      href: "fale-conosco",
+      cta: true,
     }
   ],
   links: {

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 215, 53%, 13%;
     --foreground: 0, 0%, 10%;
 
     --muted: 192, 100%, 7%;
@@ -19,8 +19,8 @@
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
 
-    --primary: 348, 100%, 44%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0, 0%, 100%;
+    --primary-foreground: 216, 52%, 13%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -55,7 +55,7 @@
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
+    --primary: 0, 0%, 100%;
     --primary-foreground: 222.2 47.4% 1.2%;
 
     --secondary: 222.2 47.4% 11.2%;
@@ -112,118 +112,53 @@
 .button::before {
   background-color: #E5E9F6;
 }
-
-/* Header styles */
-.header {
-  @apply flex justify-between items-center py-4;
+.image-before{
+  position: relative;
 }
 
-.logo {
-  @apply text-lg font-bold;
+.image-before::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  width: 260px; /* Adjust the width as needed */
+  height: 260px; /* Adjust the height as needed */
+  opacity: 50%;
+  background-image: url('/imagens/logoai.png'); /* Path to your image */
+  background-size: cover;
+  margin-right: 8px; /* Adjust the margin as needed */
+  filter: brightness(0) invert(1);
+}
+.image-before-tl::before{
+  top: -90px;
+  left: 50px;
 }
 
-.nav {
-  @apply flex justify-end items-center;
+.content::before{
+  bottom: -200px;
+  right: -50px;
+}
+.blur-content{
+  position: relative;
+}
+.blur-content img 
+{
+  z-index: 2;
+  position: relative;
 }
 
-.nav-link {
-  @apply text-sm font-medium text-gray-600 hover:text-gray-900;
+.blur-content::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  filter: blur(100px);
+  width: 230px;
+  /*Create a circle*/
+  border-radius: 100%;
+  height: 230px;
+  z-index: 0;
 }
 
-/* Hero styles */
-.hero {
-  @apply flex justify-center items-center mb-4;
-}
-
-.hero-title {
-  @apply text-3xl font-bold;
-}
-
-.hero-subtitle {
-  @apply text-lg font-medium;
-}
-
-.hero-cta {
-  @apply bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded;
-}
-
-/* Problem and Solution styles */
-.problem-solution {
-  @apply flex flex-col items-center py-4;
-}
-
-.problem-statement {
-  @apply text-lg font-medium;
-}
-
-.solution-statement {
-  @apply text-lg font-medium;
-}
-
-.icon {
-  @apply w-12 h-12 text-gray-600;
-}
-
-/* Benefits styles */
-.benefits {
-  @apply flex flex-wrap justify-center items-center py-4;
-}
-
-.benefit {
-  @apply flex flex-col items-center p-4;
-}
-
-.benefit-icon {
-  @apply w-12 h-12 text-gray-600;
-}
-
-.benefit-text {
-  @apply text-sm font-medium;
-}
-
-/* Call to Action styles */
-.call-to-action {
-  @apply flex justify-center items-center py-4 bg-orange-500 hover:bg-orange-700;
-}
-
-.call-to-action-text {
-  @apply text-lg font-bold text-white;
-}
-
-.call-to-action-cta {
-  @apply bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded;
-}
-
-/* Trust and Testimonials styles */
-.trust {
-  @apply flex flex-col items-center py-4;
-}
-
-.trust-title {
-  @apply text-lg font-bold;
-}
-
-.testimonial {
-  @apply flex flex-col items-center p-4;
-}
-
-.testimonial-text {
-  @apply text-sm font-medium;
-}
-
-.testimonial-author {
-  @apply text-sm font-medium text-gray-600;
-}
-
-/* Footer styles */
-.footer {
-  @apply flex justify-center items-center py-4 bg-gray-200;
-}
-
-.footer-text {
-  @apply text-sm font-medium text-gray-600;
-}
-
-.footer-contact {
-  @apply text-sm font-medium text-gray-600;
-}
